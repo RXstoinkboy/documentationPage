@@ -1,5 +1,5 @@
 .button{
-    border: 2px solid var(--textHover);
+    border: 1px solid var(--textHover);
     float: right;
     border-radius: 2px;
     color: var(--mainTextColor);
@@ -9,9 +9,7 @@
     cursor: pointer;
 
     &:hover{
-        border: 3px solid var(--textHover);
         color: var(--textHover);
-        padding: 9px;
     }
 }
 

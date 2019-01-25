@@ -6,3 +6,18 @@
 .nav-link:hover{
     color: var(--textHover);
 }
+
+.nav__search{
+    color: var(--mainTextColor);
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid var(--textHover);
+}
+
+.nav__search::placeholder{
+    color: grey;
+}
+
+.nav__search:focus{
+    outline: none;
+}
