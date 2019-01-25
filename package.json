@@ -1,7 +1,7 @@
 {
-  "name": "devconfig",
-  "version": "1.2.0",
-  "description": "configuration file to automate dev process using npm scripts and webpack",
+  "name": "documentationpage",
+  "version": "1.0.0",
+  "description": "a documentation page prepared for FCC RWD certificate",
   "main": "./src/js/index.js",
   "scripts": {
     "sass:dist": "node-sass  -o src/css src/scss",
@@ -24,8 +24,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RXstoinkboy/devConfiguration.git"
+    "url": "git+https://github.com/RXstoinkboy/documentationPage.git"
   },
+  "author": "Eryk Ludwin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RXstoinkboy/documentationPage/issues"
+  },
+  "homepage": "https://github.com/RXstoinkboy/documentationPage#readme",
   "keywords": [
     "webpack",
     "npm",
@@ -34,12 +40,6 @@
     "javascript",
     "rxstoinkboy"
   ],
-  "author": "RXstoinkboy",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/RXstoinkboy/devConfiguration/issues"
-  },
-  "homepage": "https://github.com/RXstoinkboy/devConfiguration#readme",
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "autoprefixer": "^9.4.2",
@@ -61,8 +61,5 @@
     "uglify-js": "^3.4.9",
     "webpack": "^4.27.1",
     "webpack-cli": "^3.1.2"
-  },
-  "dependencies": {
-    "lodash": "^4.17.11"
   }
 }

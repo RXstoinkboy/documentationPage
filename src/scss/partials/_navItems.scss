@@ -1,0 +1,8 @@
+.nav-link{
+    transition: all .3s ease;
+    transform-origin: left;
+}
+
+.nav-link:hover{
+    color: var(--textHover);
+}

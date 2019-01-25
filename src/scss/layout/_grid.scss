@@ -1,0 +1,18 @@
+.wrapper{
+    display: grid;
+    grid-template-columns: minmax(250px, 1fr) 3fr;
+
+    @media (max-width: 700px){
+        grid-template-columns: 1fr;
+    }
+}
+
+.mainHeader{
+    grid-column: 1/-1;
+    height: 15vh;
+}
+
+.footer{
+    grid-column: 1/-1;
+    height: 15vh;
+}

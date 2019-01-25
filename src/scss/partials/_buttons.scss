@@ -1,0 +1,32 @@
+.button{
+    border: 2px solid var(--textHover);
+    float: right;
+    border-radius: 2px;
+    color: var(--mainTextColor);
+    padding: 10px;
+    margin: 0 10px 0 0;
+    transition: all .3s ease;
+    cursor: pointer;
+
+    &:hover{
+        border: 3px solid var(--textHover);
+        color: var(--textHover);
+        padding: 9px;
+    }
+}
+
+.button--toggleDarkMode{
+    &:hover{
+        background: rgb(0, 0, 0);
+    }
+}
+
+.button--returnHome{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+}

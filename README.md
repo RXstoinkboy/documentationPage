@@ -1,5 +1,5 @@
-# devConfig
-My configuration file for website development purposes
+# documentationPage
+This is a simple example documentation page prepared for FCC RWD certification. I made it with CSS grid for layout. There is some data already prepared in HTML, but you can also fetch additional data.
 
 ## Usage
 These are instructions needed for you in order to download this repo and run it on your local machine.
@@ -11,7 +11,7 @@ In order to run this repository and modify it you need [**NodeJS**][1] and **npm
 
 1. Clone the repo to your local environment:
     ```
-    https://github.com/RXstoinkboy/devConfiguration.git
+    git clone https://github.com/RXstoinkboy/documentationPage.git
     ```
 
 1. Install all dependencies used for building this project:
