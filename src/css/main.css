@@ -25,7 +25,7 @@ button:focus {
   outline: none; }
 
 .mainHeader {
-  background: linear-gradient(45deg, #6f00ff 0%, #ff1e00 100%); }
+  background: linear-gradient(45deg, var(--mainTextColor) 0%, var(--textHover) 100%); }
 
 .nav {
   padding: 30px;
@@ -41,7 +41,16 @@ button:focus {
     text-align: center; }
   @media (max-width: 800px) {
     .nav {
-      display: none; } }
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+      transition: all .3s ease; } }
 
 .mainDoc {
   padding: 30px 60px 30px 30px;
@@ -57,7 +66,7 @@ button:focus {
       padding-bottom: 30px; }
 
 .footer {
-  background: linear-gradient(-45deg, lightblue 0%, blue 100%); }
+  background: linear-gradient(-45deg, var(--mainTextColor) 0%, var(--textHover) 100%); }
 
 .wrapper {
   display: grid;
@@ -108,7 +117,7 @@ button:focus {
 .nav__search:focus {
   outline: none; }
 
-.button {
+.button, .nav__burger {
   border: 1px solid var(--textHover);
   float: right;
   border-radius: 2px;
@@ -117,13 +126,14 @@ button:focus {
   margin: 0 10px 0 0;
   transition: all .3s ease;
   cursor: pointer; }
-  .button:hover {
+  .button:hover, .nav__burger:hover {
     color: var(--textHover); }
 
 .button--toggleDarkMode:hover {
   background: black; }
 
 .button--returnHome {
+  color: var(--mainTextColor);
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -146,3 +156,47 @@ button:focus {
   display: block;
   color: grey;
   font-size: .8em; }
+
+.button, .nav__burger {
+  border: 1px solid var(--textHover);
+  float: right;
+  border-radius: 2px;
+  color: var(--mainTextColor);
+  padding: 10px;
+  margin: 0 10px 0 0;
+  transition: all .3s ease;
+  cursor: pointer; }
+  .button:hover, .nav__burger:hover {
+    color: var(--textHover); }
+
+.button--toggleDarkMode:hover {
+  background: black; }
+
+.button--returnHome {
+  color: var(--mainTextColor);
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5); }
+
+.nav__burger {
+  z-index: 20;
+  display: none;
+  position: fixed;
+  content: 'MENU';
+  top: 10px;
+  right: 10px;
+  padding: 15px;
+  text-align: center;
+  overflow: visible;
+  background: rgba(255, 255, 255, 0.651);
+  transition: all .3s ease; }
+  .nav__burger:hover {
+    color: var(--textHover); }
+
+@media all and (max-width: 800px) {
+  .nav__burger {
+    display: block; } }

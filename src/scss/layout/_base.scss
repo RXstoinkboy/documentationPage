@@ -32,7 +32,7 @@ button:focus{
 }
 
 .mainHeader{
-    background: linear-gradient(45deg, rgb(111, 0, 255) 0%, rgb(255, 30, 0) 100%);
+    background: linear-gradient(45deg, var(--mainTextColor) 0%, var(--textHover) 100%);
 }
 
 .nav{
@@ -53,7 +53,18 @@ button:focus{
     }
     
     @media (max-width:800px){
-        display: none;
+        &{
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            transition: all .3s ease;
+        }
     }
 }
 
@@ -79,5 +90,5 @@ button:focus{
 }
 
 .footer{
-    background: linear-gradient(-45deg, lightblue 0%, blue 100%);
+    background: linear-gradient(-45deg, var(--mainTextColor) 0%, var(--textHover) 100%);
 }
