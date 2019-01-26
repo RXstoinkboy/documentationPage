@@ -1,6 +1,6 @@
 import { toggleDarkMode } from './darkMode.js';
 import { returnHome } from './returnHome.js';
-// import { highlight } from './highlight.js';
+import { mobileNav, closeNav } from './mobileNav.js';
 
 window.addEventListener('DOMContentLoaded', () => {
   const buttonDarkMode = document.querySelector('.button--toggleDarkMode');
@@ -9,6 +9,8 @@ window.addEventListener('DOMContentLoaded', () => {
   const buttonToTop = document.querySelector('.button--returnHome');
   const menuItems = document.querySelectorAll('.nav-link');
   const highlighter = document.createElement('div');
+  const burger = document.querySelector('.nav__burger');
+  const nav = document.querySelector('.nav');
 
   let current = 18;
 
@@ -47,6 +49,8 @@ window.addEventListener('DOMContentLoaded', () => {
   buttonToTop.addEventListener('click', returnHome);
   buttonDarkMode.addEventListener('click', toggleDarkMode);
   menuItems.forEach(item => item.addEventListener('mouseenter', highlight));
+  menuItems.forEach(item => item.addEventListener('click', closeNav));
+  burger.addEventListener('click', mobileNav);
 
   // do not display highlighter on mobiles
   window.addEventListener('resize', () => {
@@ -54,6 +58,10 @@ window.addEventListener('DOMContentLoaded', () => {
       highlighter.style.display = 'none';
     } else {
       highlighter.style.display = 'block';
+      burger.innerHTML = 'MENU';
+      if (nav.classList.contains('nav--active')) {
+        nav.classList.remove('nav--active');
+      }
     }
   });
 });

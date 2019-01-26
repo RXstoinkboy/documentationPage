@@ -1,26 +1,22 @@
 @import './buttons';
 
 .nav__burger{
-    z-index: 20;
-    display: none;
     @extend .button;
+    z-index: 20;
+    display: none;    
     position: fixed;
-    content: 'MENU';
     top: 10px;
     right: 10px;
-    padding: 15px;
-    text-align: center; 
-    overflow: visible;
-    background: rgba(255, 255, 255, 0.651);
-    transition: all .3s ease;
-
-    &:hover{
-        color: var(--textHover);
-    }
+    text-align: center;
 }
 
 @media all and (max-width: 800px){
     .nav__burger{        
     display: block;
     }
+}
+
+.nav--active {
+    transform: scale(1);
+    opacity: 1;
 }

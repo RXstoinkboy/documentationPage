@@ -141,7 +141,8 @@ var _darkMode = __webpack_require__(/*! ./darkMode.js */ "./src/js/darkMode.js")
 
 var _returnHome = __webpack_require__(/*! ./returnHome.js */ "./src/js/returnHome.js");
 
-// import { highlight } from './highlight.js';
+var _mobileNav = __webpack_require__(/*! ./mobileNav.js */ "./src/js/mobileNav.js");
+
 window.addEventListener('DOMContentLoaded', function () {
   var buttonDarkMode = document.querySelector('.button--toggleDarkMode');
   var buttonSizeDown = document.querySelector('.button--fontSizeDown');
@@ -149,6 +150,8 @@ window.addEventListener('DOMContentLoaded', function () {
   var buttonToTop = document.querySelector('.button--returnHome');
   var menuItems = document.querySelectorAll('.nav-link');
   var highlighter = document.createElement('div');
+  var burger = document.querySelector('.nav__burger');
+  var nav = document.querySelector('.nav');
   var current = 18; // change font size
 
   function changeSize(e) {
@@ -185,16 +188,66 @@ window.addEventListener('DOMContentLoaded', function () {
   buttonDarkMode.addEventListener('click', _darkMode.toggleDarkMode);
   menuItems.forEach(function (item) {
     return item.addEventListener('mouseenter', highlight);
-  }); // do not display highlighter on mobiles
+  });
+  menuItems.forEach(function (item) {
+    return item.addEventListener('click', _mobileNav.closeNav);
+  });
+  burger.addEventListener('click', _mobileNav.mobileNav); // do not display highlighter on mobiles
 
   window.addEventListener('resize', function () {
     if (window.innerWidth < 800) {
       highlighter.style.display = 'none';
     } else {
       highlighter.style.display = 'block';
+      burger.innerHTML = 'MENU';
+
+      if (nav.classList.contains('nav--active')) {
+        nav.classList.remove('nav--active');
+      }
     }
   });
 });
+
+/***/ }),
+
+/***/ "./src/js/mobileNav.js":
+/*!*****************************!*\
+  !*** ./src/js/mobileNav.js ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.mobileNav = mobileNav;
+exports.closeNav = closeNav;
+
+function mobileNav() {
+  var burger = document.querySelector('.nav__burger');
+  var nav = document.querySelector('.nav');
+
+  if (burger.innerHTML === 'MENU') {
+    burger.innerHTML = 'CLOSE';
+  } else {
+    burger.innerHTML = 'MENU';
+  }
+
+  nav.classList.toggle('nav--active');
+}
+
+function closeNav() {
+  var nav = document.querySelector('.nav');
+  var burger = document.querySelector('.nav__burger');
+
+  if (window.innerWidth < 800) {
+    nav.classList.remove('nav--active');
+    burger.innerHTML = 'MENU';
+  }
+}
 
 /***/ }),
 

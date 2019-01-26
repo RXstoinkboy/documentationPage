@@ -39,6 +39,7 @@ button:focus{
     padding: 30px;
     display: flex;
     flex-direction: column;
+    
 
     .nav__header{
         font-family: 'Roboto', sans-serif;
@@ -57,7 +58,6 @@ button:focus{
     
     @media (max-width:800px){
         &{
-            display: none;
             position: fixed;
             top: 0;
             right: 0;
@@ -66,7 +66,10 @@ button:focus{
             height: 100vh;
             align-items: center;
             justify-content: center;
-            transition: all .3s ease;
+            opacity: 0;
+            transform: scale(0);
+            transform-origin: 95% 20px;
+            transition: transform .5s ease, opacity .3s ease;
         }
     }
 }
