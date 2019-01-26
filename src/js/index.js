@@ -1,5 +1,4 @@
 import { toggleDarkMode } from './darkMode.js';
-// import { changeSize } from './fontSize.js';
 
 window.addEventListener('DOMContentLoaded', () => {
   const buttonDarkMode = document.querySelector('.button--toggleDarkMode');

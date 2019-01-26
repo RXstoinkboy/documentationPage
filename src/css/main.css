@@ -2,7 +2,7 @@
 :root {
   --mainTextColor: rgb(22, 69, 122);
   --fontSize: 18px;
-  --backgroundColor: white;
+  --backgroundColor:white;
   --textHover: rgb(144, 196, 238); }
 
 html {
