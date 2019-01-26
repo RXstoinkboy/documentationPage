@@ -86,7 +86,10 @@ button:focus {
         color: var(--textHover); }
 
 .footer {
-  background: linear-gradient(-45deg, #16457a 0%, #90c4ee 100%); }
+  background: linear-gradient(-45deg, #16457a 0%, #90c4ee 100%);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center; }
 
 .wrapper {
   display: grid;
@@ -158,6 +161,10 @@ button:focus {
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.5); }
 
+.arrow {
+  transform: rotate(-90deg) scale(0.7);
+  background: none; }
+
 .main-section > ul {
   margin: 10px 0 40px 50px; }
 
@@ -197,6 +204,10 @@ button:focus {
   height: 60px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.5); }
+
+.arrow {
+  transform: rotate(-90deg) scale(0.7);
+  background: none; }
 
 .nav__burger {
   z-index: 20;

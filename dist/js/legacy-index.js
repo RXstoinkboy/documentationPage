@@ -144,6 +144,8 @@ var _mobileNav = __webpack_require__(/*! ./mobileNav.js */ "./src/js/mobileNav.j
 
 var _pullData = __webpack_require__(/*! ./pullData.js */ "./src/js/pullData.js");
 
+var _search = __webpack_require__(/*! ./search.js */ "./src/js/search.js");
+
 window.addEventListener('DOMContentLoaded', function () {
   var buttonDarkMode = document.querySelector('.button--toggleDarkMode');
   var buttonSizeDown = document.querySelector('.button--fontSizeDown');
@@ -154,6 +156,7 @@ window.addEventListener('DOMContentLoaded', function () {
   var burger = document.querySelector('.nav__burger');
   var nav = document.querySelector('.nav');
   var buttonReadMore = document.querySelectorAll('.main-section__readMore');
+  var searchBar = document.querySelector('.nav__search');
   var current = 18; // change font size
 
   function changeSize(e) {
@@ -197,7 +200,8 @@ window.addEventListener('DOMContentLoaded', function () {
   burger.addEventListener('click', _mobileNav.mobileNav);
   buttonReadMore.forEach(function (button) {
     return button.addEventListener('click', _pullData.pullData);
-  }); // do not display highlighter on mobiles
+  });
+  searchBar.addEventListener('input', _search.search); // do not display highlighter on mobiles
 
   window.addEventListener('resize', function () {
     if (window.innerWidth < 850) {
@@ -352,6 +356,36 @@ function returnHome() {
   window.scrollTo({
     top: 0,
     behavior: 'smooth'
+  });
+}
+
+/***/ }),
+
+/***/ "./src/js/search.js":
+/*!**************************!*\
+  !*** ./src/js/search.js ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.search = search;
+
+function search() {
+  var searchBar = document.querySelector('.nav__search');
+  var searchInput = searchBar.value;
+  var navItems = document.querySelectorAll('.nav-link');
+  navItems.forEach(function (item) {
+    if (item.innerHTML.includes(searchInput)) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
   });
 }
 

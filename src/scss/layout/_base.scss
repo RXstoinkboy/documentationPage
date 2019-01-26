@@ -110,4 +110,7 @@ button:focus{
 
 .footer{
     background: linear-gradient(-45deg, rgb(22, 69, 122) 0%, rgb(144, 196, 238) 100%);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
 }
