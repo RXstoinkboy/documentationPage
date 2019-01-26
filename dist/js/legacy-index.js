@@ -276,39 +276,51 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 function pullData() {
-  var paragraph = document.createElement('p');
-  paragraph.classList.add('main-section__content');
-  this.before(paragraph);
+  var _this = this;
+
   var random = Math.floor(Math.random() * 100);
 
   var getData = function () {
     var _ref = _asyncToGenerator(
     /*#__PURE__*/
     regeneratorRuntime.mark(function _callee() {
-      var data, json, someText;
+      var data, json, someText, paragraph;
       return regeneratorRuntime.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              _context.next = 2;
+              _context.prev = 0;
+              _context.next = 3;
               return fetch('https://jsonplaceholder.typicode.com/posts');
 
-            case 2:
+            case 3:
               data = _context.sent;
-              _context.next = 5;
+              _context.next = 6;
               return data.json();
 
-            case 5:
+            case 6:
               json = _context.sent;
               someText = json[random].body;
-              paragraph.innerHTML = someText;
+              paragraph = document.createElement('p');
+              paragraph.classList.add('main-section__content');
 
-            case 8:
+              _this.before(paragraph);
+
+              paragraph.innerHTML = someText;
+              _context.next = 17;
+              break;
+
+            case 14:
+              _context.prev = 14;
+              _context.t0 = _context["catch"](0);
+              throw new Error('Sorry, something went wrong...');
+
+            case 17:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, this);
+      }, _callee, this, [[0, 14]]);
     }));
 
     return function getData() {
