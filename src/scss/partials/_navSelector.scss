@@ -1,9 +1,14 @@
 .menuSelector{
     position: absolute;
-    height: 40px;
-    width: 200px;
-    top: 0;
-    left: 0;
-    background: transparent;
+    background: none;
     border: 1px solid var(--textHover);
+    border-radius: 2px;
+    transition: all .6s ease;
+    display: block;
+
+    @media all and(max-width: 800px){
+        &{
+            display: none;
+        }
+    }
 }

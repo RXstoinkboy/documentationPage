@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:100,400");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300|Roboto:700");
 :root {
   --mainTextColor: rgb(22, 69, 122);
   --fontSize: 18px;
@@ -12,7 +12,7 @@ html {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-size: var(--fontSize);
   color: var(--mainTextColor);
   font-weight: 100;
@@ -38,13 +38,16 @@ button:focus {
   display: flex;
   flex-direction: column; }
   .nav .nav__header {
+    font-family: 'Roboto', sans-serif;
     padding-bottom: 20px;
     font-size: 1.6em;
     font-weight: 400; }
   .nav .nav-link {
     padding: 8px 0;
     width: 100%;
-    text-align: center; }
+    text-align: center;
+    z-index: 10;
+    background: transparent; }
   @media (max-width: 800px) {
     .nav {
       display: none;
@@ -65,6 +68,7 @@ button:focus {
     margin-bottom: 70px;
     border-bottom: 1px solid var(--mainTextColor); }
     .mainDoc .main-section .main-section__header {
+      font-family: 'Roboto', sans-serif;
       font-size: 1.3em;
       padding-bottom: 40px;
       font-weight: 400; }
@@ -91,12 +95,14 @@ button:focus {
 
 .menuSelector {
   position: absolute;
-  height: 40px;
-  width: 200px;
-  top: 0;
-  left: 0;
-  background: transparent;
-  border: 1px solid var(--textHover); }
+  background: none;
+  border: 1px solid var(--textHover);
+  border-radius: 2px;
+  transition: all .6s ease;
+  display: block; }
+  @media all and (max-width: 800px) {
+    .menuSelector {
+      display: none; } }
 
 .nav-link {
   transition: all .3s ease;
