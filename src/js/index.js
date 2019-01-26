@@ -54,7 +54,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // do not display highlighter on mobiles
   window.addEventListener('resize', () => {
-    if (window.innerWidth < 800) {
+    if (window.innerWidth < 850) {
       highlighter.style.display = 'none';
     } else {
       highlighter.style.display = 'block';

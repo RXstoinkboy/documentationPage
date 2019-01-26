@@ -195,7 +195,7 @@ window.addEventListener('DOMContentLoaded', function () {
   burger.addEventListener('click', _mobileNav.mobileNav); // do not display highlighter on mobiles
 
   window.addEventListener('resize', function () {
-    if (window.innerWidth < 800) {
+    if (window.innerWidth < 850) {
       highlighter.style.display = 'none';
     } else {
       highlighter.style.display = 'block';
@@ -243,7 +243,7 @@ function closeNav() {
   var nav = document.querySelector('.nav');
   var burger = document.querySelector('.nav__burger');
 
-  if (window.innerWidth < 800) {
+  if (window.innerWidth < 850) {
     nav.classList.remove('nav--active');
     burger.innerHTML = 'MENU';
   }

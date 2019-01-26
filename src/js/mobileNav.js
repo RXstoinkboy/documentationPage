@@ -16,7 +16,7 @@ export function closeNav() {
   const nav = document.querySelector('.nav');
   const burger = document.querySelector('.nav__burger');
 
-  if (window.innerWidth < 800) {
+  if (window.innerWidth < 850) {
     nav.classList.remove('nav--active');
     burger.innerHTML = 'MENU';
   }
