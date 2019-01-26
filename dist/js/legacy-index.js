@@ -103,15 +103,24 @@ exports.toggleDarkMode = toggleDarkMode;
 
 function toggleDarkMode() {
   var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--backgroundColor');
+  var codes = document.querySelectorAll('code');
   console.log(this.innerHTML);
 
   if (bgColor != 'white') {
     document.documentElement.style.setProperty('--backgroundColor', 'white');
     document.documentElement.style.setProperty('--mainTextColor', 'rgb(22, 69, 122)');
+    codes.forEach(function (code) {
+      code.style.backgroundColor = 'rgb(231, 231, 231)';
+      code.style.color = 'grey';
+    });
     this.innerHTML = 'Dark mode';
   } else {
     document.documentElement.style.setProperty('--backgroundColor', 'black');
     document.documentElement.style.setProperty('--mainTextColor', 'white');
+    codes.forEach(function (code) {
+      code.style.backgroundColor = '#151515';
+      code.style.color = 'white';
+    });
     this.innerHTML = 'Light mode';
   }
 }
@@ -130,10 +139,13 @@ function toggleDarkMode() {
 
 var _darkMode = __webpack_require__(/*! ./darkMode.js */ "./src/js/darkMode.js");
 
+var _returnHome = __webpack_require__(/*! ./returnHome.js */ "./src/js/returnHome.js");
+
 window.addEventListener('DOMContentLoaded', function () {
   var buttonDarkMode = document.querySelector('.button--toggleDarkMode');
   var buttonSizeDown = document.querySelector('.button--fontSizeDown');
   var buttonSizeUp = document.querySelector('.button--fontSizeUp');
+  var buttonToTop = document.querySelector('.button--returnHome');
   var current = 18;
 
   function changeSize(e) {
@@ -148,8 +160,33 @@ window.addEventListener('DOMContentLoaded', function () {
 
   buttonSizeDown.addEventListener('click', changeSize);
   buttonSizeUp.addEventListener('click', changeSize);
+  buttonToTop.addEventListener('click', _returnHome.returnHome);
   buttonDarkMode.addEventListener('click', _darkMode.toggleDarkMode);
 });
+
+/***/ }),
+
+/***/ "./src/js/returnHome.js":
+/*!******************************!*\
+  !*** ./src/js/returnHome.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.returnHome = returnHome;
+
+function returnHome() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
 
 /***/ })
 
