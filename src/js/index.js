@@ -1,6 +1,7 @@
 import { toggleDarkMode } from './darkMode.js';
 import { returnHome } from './returnHome.js';
 import { mobileNav, closeNav } from './mobileNav.js';
+import { pullData } from './pullData.js';
 
 window.addEventListener('DOMContentLoaded', () => {
   const buttonDarkMode = document.querySelector('.button--toggleDarkMode');
@@ -11,6 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const highlighter = document.createElement('div');
   const burger = document.querySelector('.nav__burger');
   const nav = document.querySelector('.nav');
+  const buttonReadMore = document.querySelectorAll('.main-section__readMore');
 
   let current = 18;
 
@@ -51,6 +53,7 @@ window.addEventListener('DOMContentLoaded', () => {
   menuItems.forEach(item => item.addEventListener('mouseenter', highlight));
   menuItems.forEach(item => item.addEventListener('click', closeNav));
   burger.addEventListener('click', mobileNav);
+  buttonReadMore.forEach(button => button.addEventListener('click', pullData));
 
   // do not display highlighter on mobiles
   window.addEventListener('resize', () => {

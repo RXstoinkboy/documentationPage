@@ -36,7 +36,8 @@ button:focus {
 .nav {
   padding: 30px;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  text-align: center; }
   .nav .nav__header {
     font-family: 'Roboto', sans-serif;
     padding-bottom: 20px;
@@ -45,7 +46,6 @@ button:focus {
   .nav .nav-link {
     padding: 8px 0;
     width: 100%;
-    text-align: center;
     z-index: 10;
     background: transparent; }
   @media (max-width: 850px) {
@@ -76,6 +76,14 @@ button:focus {
       font-weight: 400; }
     .mainDoc .main-section .main-section__content {
       padding-bottom: 30px; }
+    .mainDoc .main-section .main-section__readMore {
+      margin-bottom: 40px;
+      cursor: pointer;
+      border: none;
+      text-decoration: underline;
+      transition: all .3s ease; }
+      .mainDoc .main-section .main-section__readMore:hover {
+        color: var(--textHover); }
 
 .footer {
   background: linear-gradient(-45deg, #16457a 0%, #90c4ee 100%); }

@@ -39,6 +39,7 @@ button:focus{
     padding: 30px;
     display: flex;
     flex-direction: column;
+    text-align: center;
     
 
     .nav__header{
@@ -51,7 +52,6 @@ button:focus{
     .nav-link{
         padding: 8px 0;
         width: 100%;
-        text-align: center;
         z-index: 10;
         background: transparent;
     }
@@ -91,6 +91,18 @@ button:focus{
 
         .main-section__content{
             padding-bottom: 30px;
+        }
+
+        .main-section__readMore{
+            margin-bottom: 40px;
+            cursor: pointer;
+            border: none;
+            text-decoration: underline;
+            transition: all .3s ease;
+
+            &:hover{
+                color: var(--textHover);
+            }
         }
     
     }

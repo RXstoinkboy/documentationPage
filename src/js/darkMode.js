@@ -1,7 +1,6 @@
 export function toggleDarkMode() {
   const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--backgroundColor');
   const codes = document.querySelectorAll('code');
-  console.log(this.innerHTML);
 
   if (bgColor != 'white') {
     document.documentElement.style.setProperty('--backgroundColor', 'white');

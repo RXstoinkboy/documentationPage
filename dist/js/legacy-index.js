@@ -104,7 +104,6 @@ exports.toggleDarkMode = toggleDarkMode;
 function toggleDarkMode() {
   var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--backgroundColor');
   var codes = document.querySelectorAll('code');
-  console.log(this.innerHTML);
 
   if (bgColor != 'white') {
     document.documentElement.style.setProperty('--backgroundColor', 'white');
@@ -143,6 +142,8 @@ var _returnHome = __webpack_require__(/*! ./returnHome.js */ "./src/js/returnHom
 
 var _mobileNav = __webpack_require__(/*! ./mobileNav.js */ "./src/js/mobileNav.js");
 
+var _pullData = __webpack_require__(/*! ./pullData.js */ "./src/js/pullData.js");
+
 window.addEventListener('DOMContentLoaded', function () {
   var buttonDarkMode = document.querySelector('.button--toggleDarkMode');
   var buttonSizeDown = document.querySelector('.button--fontSizeDown');
@@ -152,6 +153,7 @@ window.addEventListener('DOMContentLoaded', function () {
   var highlighter = document.createElement('div');
   var burger = document.querySelector('.nav__burger');
   var nav = document.querySelector('.nav');
+  var buttonReadMore = document.querySelectorAll('.main-section__readMore');
   var current = 18; // change font size
 
   function changeSize(e) {
@@ -192,7 +194,10 @@ window.addEventListener('DOMContentLoaded', function () {
   menuItems.forEach(function (item) {
     return item.addEventListener('click', _mobileNav.closeNav);
   });
-  burger.addEventListener('click', _mobileNav.mobileNav); // do not display highlighter on mobiles
+  burger.addEventListener('click', _mobileNav.mobileNav);
+  buttonReadMore.forEach(function (button) {
+    return button.addEventListener('click', _pullData.pullData);
+  }); // do not display highlighter on mobiles
 
   window.addEventListener('resize', function () {
     if (window.innerWidth < 850) {
@@ -247,6 +252,71 @@ function closeNav() {
     nav.classList.remove('nav--active');
     burger.innerHTML = 'MENU';
   }
+}
+
+/***/ }),
+
+/***/ "./src/js/pullData.js":
+/*!****************************!*\
+  !*** ./src/js/pullData.js ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.pullData = pullData;
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function pullData() {
+  var paragraph = document.createElement('p');
+  paragraph.classList.add('main-section__content');
+  this.before(paragraph);
+  var random = Math.floor(Math.random() * 100);
+
+  var getData = function () {
+    var _ref = _asyncToGenerator(
+    /*#__PURE__*/
+    regeneratorRuntime.mark(function _callee() {
+      var data, json, someText;
+      return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return fetch('https://jsonplaceholder.typicode.com/posts');
+
+            case 2:
+              data = _context.sent;
+              _context.next = 5;
+              return data.json();
+
+            case 5:
+              json = _context.sent;
+              someText = json[random].body;
+              paragraph.innerHTML = someText;
+
+            case 8:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, this);
+    }));
+
+    return function getData() {
+      return _ref.apply(this, arguments);
+    };
+  }();
+
+  getData();
 }
 
 /***/ }),
