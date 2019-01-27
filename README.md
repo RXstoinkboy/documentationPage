@@ -1,5 +1,5 @@
 # documentationPage
-This is a simple example documentation page prepared for FCC RWD certification. I made it with CSS grid for layout. There is some data already prepared in HTML, but you can also fetch additional data.
+This is a simple example documentation page prepared for FCC RWD certification. I made it with CSS grid for layout. There is some data already prepared in HTML, but you can also fetch additional fake data from jsonplaceholder.
 
 ## Usage
 These are instructions needed for you in order to download this repo and run it on your local machine.
