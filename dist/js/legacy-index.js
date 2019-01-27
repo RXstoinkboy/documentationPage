@@ -10886,7 +10886,18 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 function pullData() {
   var _this = this;
 
-  var random = Math.floor(Math.random() * 100);
+  var random = Math.floor(Math.random() * 100); // fetch('https://jsonplaceholder.typicode.com/posts')
+  //   .then(data => data.json())
+  //   .then(json => json[random].body)
+  //   .then((someText) => {
+  //     const paragraph = document.createElement('p');
+  //     paragraph.classList.add('main-section__content');
+  //     this.before(paragraph);
+  //     paragraph.innerHTML = someText;
+  //   })
+  //   .catch((error) => {
+  //     throw new Error(error, 'Sorry, something went wrong');
+  //   });
 
   var getData = function () {
     var _ref = _asyncToGenerator(
@@ -10908,27 +10919,31 @@ function pullData() {
 
             case 6:
               json = _context.sent;
-              someText = json[random].body;
+              _context.next = 9;
+              return json[random].body;
+
+            case 9:
+              someText = _context.sent;
               paragraph = document.createElement('p');
               paragraph.classList.add('main-section__content');
 
               _this.before(paragraph);
 
               paragraph.innerHTML = someText;
-              _context.next = 17;
+              _context.next = 19;
               break;
 
-            case 14:
-              _context.prev = 14;
+            case 16:
+              _context.prev = 16;
               _context.t0 = _context["catch"](0);
-              throw new Error('Sorry, something went wrong...');
+              throw new Error(_context.t0, 'Sorry, something went wrong...');
 
-            case 17:
+            case 19:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, this, [[0, 14]]);
+      }, _callee, this, [[0, 16]]);
     }));
 
     return function getData() {
