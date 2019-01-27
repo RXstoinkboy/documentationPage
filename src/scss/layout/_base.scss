@@ -106,6 +106,12 @@ button:focus{
         }
     
     }
+
+    @media all and (max-width:850px){
+        &{
+            padding: 30px 20px;
+        }
+    }
 }
 
 .footer{
